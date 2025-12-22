@@ -1,47 +1,67 @@
-# PeerSupport 🫂  
-*A Gamified Mentorship & Mental Wellness Ecosystem*
+# 🫂 PeerSupport — Gamified Mentorship & Wellness Platform
 
-PeerSupport is an ambitious full-stack mentorship ecosystem designed to bridge the gap between human vulnerability and digital connection. Through a game-first, non-intimidating experience, the platform transforms emotional support into a rewarding, community-driven journey—where empathy is valued, participation is incentivized, and care becomes a sustainable economy.
+[![MERN](https://img.shields.io/badge/Stack-MERN-10b981?style=for-the-badge)](https://mongodb.com)
+[![React](https://img.shields.io/badge/Frontend-React-61DAFB?style=for-the-badge&logo=react)](https://react.dev)
+[![Node](https://img.shields.io/badge/Backend-Node.js-339933?style=for-the-badge&logo=nodedotjs)](https://nodejs.org)
+[![FinTech](https://img.shields.io/badge/Layer-FinTech-8b5cf6?style=for-the-badge)](#)
 
-At the heart of the experience is the Aether UI Engine — a proprietary rendering philosophy that rejects sterile, clinical web design in favor of a high-fidelity, bitmap-driven “Skinned” interface. This intentional aesthetic lowers psychological barriers for users (Talkers), making it easier to open up and engage authentically.
+PeerSupport is a full-stack mentorship and emotional wellness ecosystem built on the MERN stack. It reimagines digital support spaces through a **game-first, non-clinical experience**, transforming empathy into a rewarding, sustainable interaction model.
 
-Behind the scenes, a robust MERN-based backend powers a two-sided marketplace where Listeners provide real-time support, earn Karma, and build reputation within a self-sustaining ecosystem of care.
-
----
-
-## Core Concepts
-
-- Talkers – Users seeking support in a welcoming, non-clinical environment  
-- Listeners – Vetted mentors who provide empathy and earn rewards  
-- Karma System – Reputation and progression layer for Listeners  
-- Digital Wallet – Secure FinTech layer for tips, rewards, and purchases  
-- Community Store – Stickers & sounds that make emotions tangible  
-- Aether UI Engine – Bitmap-driven UI philosophy focused on comfort & immersion  
+Rather than sterile interfaces, PeerSupport focuses on comfort, immersion, and emotional expression—bridging human vulnerability with modern, high-integrity engineering.
 
 ---
 
-## Key Features
+## 🌌 Product Philosophy
 
-- Real-time chat between Talkers and Listeners  
-- Secure digital wallet & transactional ledger  
-- In-app store for stickers, sounds, and UI interactions  
-- Sticker Drawer & sound effects for emotional expression  
-- Modular backend controllers for scalability  
-- Cloudinary-powered media upload pipelines  
-- Mongoose-backed financial integrity and data safety  
-- Listener vetting & role-based access control  
+### Aether UI Engine
+PeerSupport is powered by the **Aether UI Engine**, a proprietary frontend design philosophy that replaces clinical UX patterns with a **bitmap-driven, skinned interface** inspired by games and virtual worlds.
+
+The intent is deliberate:
+Lower psychological barriers, encourage openness, and make emotional interaction feel safe, expressive, and human.
 
 ---
 
-## Tech Stack
+## 🧠 Core Concepts
 
-Frontend:
+- **Talkers** — Users seeking guidance, mentorship, or emotional support
+- **Listeners** — Vetted mentors who provide real-time empathy
+- **Karma System** — Reputation and progression for Listeners
+- **Digital Wallet** — Secure reward and tipping infrastructure
+- **Community Store** — Stickers and sounds that make emotions tangible
+
+---
+
+## 🛠️ Engineering Highlights
+
+- **Two-Sided Marketplace Architecture**  
+  Clean separation between Talker and Listener roles with permission-based access.
+
+- **Service-Oriented Backend**  
+  Modular controller-service pattern for scalability and maintainability.
+
+- **Secure FinTech Layer**  
+  Digital wallet, transactional ledger, and purchase flows backed by Mongoose integrity guarantees.
+
+- **Expressive Interaction Layer**  
+  Sticker Drawer and sound effects for non-verbal emotional communication.
+
+- **Cloudinary Media Pipelines**  
+  Custom upload handling for avatars and digital assets.
+
+- **JWT-Based Authentication**  
+  Secure, stateless auth with role-aware middleware.
+
+---
+
+## 🧱 Tech Stack
+
+### Frontend
 - React
 - Tailwind CSS
-- Custom Aether UI Engine
 - Context API
+- Custom Aether UI Theming System
 
-Backend:
+### Backend
 - Node.js
 - Express
 - MongoDB + Mongoose
@@ -50,118 +70,69 @@ Backend:
 
 ---
 
-## Project Structure
+## 📂 Project Architecture
 
+```text
 PeerSupportStartup/
-├── server/
-│   ├── config/
-│   │   ├── cloudinary.js
-│   │   └── db.js
-│   ├── controllers/
-│   │   ├── authController.js
-│   │   ├── chatController.js
-│   │   ├── listenerController.js
-│   │   ├── paymentController.js
-│   │   ├── productController.js
-│   │   └── walletController.js
-│   ├── middleware/
-│   │   ├── authMiddleware.js
-│   │   ├── errorMiddleware.js
-│   │   └── uploadMiddleware.js
-│   ├── models/
-│   │   ├── Chat.js
-│   │   ├── ListenerProfile.js
-│   │   ├── Product.js
-│   │   ├── Transaction.js
-│   │   └── User.js
-│   ├── routes/
-│   │   ├── authRoutes.js
-│   │   ├── chatRoutes.js
-│   │   ├── listenerRoutes.js
-│   │   ├── paymentRoutes.js
-│   │   ├── productRoutes.js
-│   │   └── walletRoutes.js
-│   ├── services/
-│   ├── uploads/
-│   ├── utils/
-│   │   └── seeAdmin.js
-│   ├── .env
-│   ├── index.js
-│   ├── package-lock.json
-│   └── package.json
+├── server/                     # Backend Application (Node / Express)
+│   ├── config/                 # Database & Cloudinary configuration
+│   ├── controllers/            # Business logic (auth, chat, wallet)
+│   ├── middleware/             # Auth, error handling, uploads
+│   ├── models/                 # Mongoose schemas
+│   ├── routes/                 # API endpoint definitions
+│   ├── services/               # External service abstractions
+│   ├── uploads/                # Temporary media storage (gitignored)
+│   ├── utils/                  # Helper utilities
+│   ├── index.js                # Server entry point
+│   └── .env                    # Environment variables (protected)
 │
-└── client/
-    ├── public/
-    │   └── assets/
-    │       ├── avatars/
-    │       ├── sounds/
-    │       ├── stickers/
-    │       ├── ui/
-    │       └── assets.js
+└── client/                     # Frontend Application (React)
+    ├── public/assets/          # Avatars, stickers, sounds, UI assets
     ├── src/
-    │   ├── components/
-    │   │   ├── common/
-    │   │   │   └── UserAvatar.js
-    │   │   └── features/
-    │   │       ├── BecomeListenerModal.js
-    │   │       ├── EditProfileModal.js
-    │   │       ├── ListenerGrid.js
-    │   │       ├── StickerDrawer.js
-    │   │       └── TipModal.js
-    │   ├── context/
-    │   │   └── ThemeContext.js
-    │   ├── hooks/
-    │   ├── pages/
-    │   │   ├── AdminDashboard.js
-    │   │   ├── ChatRoom.js
-    │   │   ├── Dashboard.js
-    │   │   ├── Login.js
-    │   │   ├── Register.js
-    │   │   ├── Settings.js
-    │   │   ├── Store.js
-    │   │   ├── Terms.js
-    │   │   └── Wallet.js
-    │   ├── services/
-    │   │   ├── api.js
-    │   │   ├── authService.js
-    │   │   ├── chatService.js
-    │   │   ├── listenerService.js
-    │   │   └── paymentService.js
-    │   ├── styles/
-    │   ├── theme/
-    │   │   └── default.js
-    │   ├── utils/
-    │   ├── App.js
-    │   └── index.css
-    ├── package-lock.json
-    ├── package.json
+    │   ├── components/         # Reusable UI components
+    │   ├── context/            # Global state & theming
+    │   ├── pages/              # Application views
+    │   ├── services/           # API & domain services
+    │   ├── theme/              # Aether UI theme definitions
+    │   ├── utils/              # Frontend helpers
+    │   ├── App.js              # Root application component
+    │   └── index.css           # Global styles
     └── tailwind.config.js
+```
 
 ---
 
-## Getting Started
+## 🚀 Installation & Setup
 
-Installation:
+### Backend
+```bash
+cd server
+npm install
+# Configure .env with MongoDB URI, JWT secret, Cloudinary keys
+npm run dev
+```
 
-git clone https://github.com/yourusername/PeerSupportStartup.git  
-cd PeerSupportStartup  
-
-Run Server:
-
-cd server  
-npm install  
-npm run dev  
-
-Run Client:
-
-cd client  
-npm install  
-npm run dev  
+### Frontend
+```bash
+cd client
+npm install
+npm run dev
+```
 
 ---
 
-## Vision
+## 🔮 Vision
 
-PeerSupport transforms traditional support groups into a thriving, sensory-rich sanctuary—where empathy is interactive, progress is visible, and care is rewarded.
+PeerSupport aims to evolve traditional support groups into a **living digital sanctuary**—where care is interactive, trust is rewarded, and emotional labor is respected.
+
+This is not just a chat application.  
+It is a self-sustaining ecosystem built around empathy, safety, and meaningful connection.
+
+---
+
+## 📝 Author
+
+Designed and engineered by **Nitin**  
+Built with a focus on human-centered systems, scalable architecture, and emotional integrity.
 
 ---
