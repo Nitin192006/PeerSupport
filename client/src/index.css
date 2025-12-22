@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* UI ELEMENT RECEIVER
+   Defines the slots for your Asset-Based Theme.
+   We include default fallbacks here to prevent visual glitches 
+   before the Theme Engine loads your assets.
+*/
+
+:root {
+    /* --- LAYOUT ELEMENTS --- */
+    --app-bg: #0f172a;
+    /* Fallback color */
+    --app-backdrop: none;
+
+    --panel-bg: #1e293b;
+    --panel-border: 1px solid white;
+    --panel-radius: 16px;
+    --panel-shadow: none;
+
+    /* --- INTERACTIVE ELEMENTS --- */
+    --btn-primary-bg: #6366f1;
+    --btn-primary-border: none;
+    --btn-radius: 12px;
+    --btn-font: sans-serif;
+    --icon-active-color: white;
+
+    /* --- TEXT --- */
+    --font-main: sans-serif;
+    --text-color: white;
+}
+
+body {
+    margin: 0;
+    /* 1. Apply the Background Variable */
+    background: var(--app-bg);
+
+    /* 2. CRITICAL FOR ASSETS: Ensure images cover the screen and don't repeat */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    /* Keeps bg still while scrolling */
+
+    /* 3. Apply other theme props */
+    backdrop-filter: var(--app-backdrop);
+    font-family: var(--font-main);
+    color: var(--text-color);
+
+    /* Smoothly transition when swapping theme assets */
+    transition: background 0.5s ease, border-radius 0.3s ease, color 0.3s ease;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+}
