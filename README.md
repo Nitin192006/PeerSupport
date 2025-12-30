@@ -133,6 +133,10 @@ It is a self-sustaining ecosystem built around empathy, safety, and meaningful c
 ## 📝 Author
 
 Designed and engineered by **Nitin**  
+Co-developed and contributed by **Stuti Jeisa Toppo**  
+
 Built with a focus on human-centered systems, scalable architecture, and emotional integrity.
+
+
 
 ---
